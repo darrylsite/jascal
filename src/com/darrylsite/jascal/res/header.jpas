@@ -1,0 +1,48 @@
+program {$program_name$};
+
+  { %VERSION=1.1 }
+  {$namespace com.darrylsite.jascal.fpc}
+  
+  {$mode objfpc}
+  {$modeswitch unicodestrings}
+  {$h+}
+  
+  uses
+    jdk15, scriptingstream;
+  
+  type
+    qprinttype = int64;
+  
+    var
+        usedErrPutStream : JIWriter;
+        programStream : OFRScriptingStreams;
+        commandLine : OFRCommandLine;
+        ParamCount : integer;
+        {$binding_vars$}
+
+  procedure initProgram(argv: Arr1JLString);
+  begin
+    programStream :=  OFRScriptingStreams.create(); 
+    commandLine :=  OFRCommandLine.create(argv);
+    ParamCount :=  commandLine.getParamCount();
+  end;
+  
+  function ParamStr(i: integer): JLString;
+  begin
+    result := commandLine.getParamter(i);
+  end;
+  
+  procedure setOutPut(outPut: JIWriter);
+  Begin
+    programStream.setWriter(outPut);
+  end;
+  
+  procedure setInPut(inPut: JIReader);
+  Begin
+     programStream.setReader(inPut);
+  end;
+  
+  procedure setErrPut(errPut: JIWriter);
+  Begin
+    usedErrPutStream := errPut;
+  end;
