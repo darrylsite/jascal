@@ -2,9 +2,16 @@ Jascal Scripting Engine
 ========================
 
 Jascal is an implementation of JAVA JSR 223 for the Pascal Language.
-The engine use the Free-Pascal compiler for the JVM. It is tested on Windows and Linux.
+The engine uses the Free-Pascal compiler for the JVM. It is tested on Windows and Linux.
 It implements the Compilable interface. The support for the Invokable interface is planned in a future.
 The Engine support passing ScriptEngine.ARGV to the context and bindings.
+
+
+Demo
+-------
+
+An online Pascal Compiler built on Jascal Scripting Engine is available at [http://jascal.darrylsite.com](http://jascal.darrylsite.com "Jascal script engine") 
+
 
 Usage
 -------
@@ -25,6 +32,5 @@ To use Jascal, add the JAR file in your project classPath. An example of a JAVA 
 
         scriptCompile.eval();
         
-        System.out.println("The literal nomber is : " + jascal.get("nombreTxt"));
 
         //jascal.getContext().getWriter().flush();
