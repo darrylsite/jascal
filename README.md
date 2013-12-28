@@ -6,7 +6,7 @@ The engine uses the Free-Pascal compiler for the JVM. It is tested on Windows an
 It implements the Compilable interface. The support for the Invokable interface is planned in a future.
 The Engine support passing ScriptEngine.ARGV to the context and bindings.
 
-Unlinke the standard FPC for JVM, Jascal supports the write/writeln instructions and also "ParamStr(i:integer) : String" function and has the "ParamCount : integer" variable. To achieve this result a slight transformation of the code is done before compilation et set the Input/Ouput and for command-line processing. The code following code is injected in every Pascal Code before compilation.
+Unlinke the standard FPC for JVM, Jascal supports the write/writeln instructions, "ParamStr(i:integer) : String" function and has the "ParamCount : integer" variable. To achieve this result a slight transformation of the code is done before compilation. The following code is injected before compilation.
 
 			program {$program_name$};
 
